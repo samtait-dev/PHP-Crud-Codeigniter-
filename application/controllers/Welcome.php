@@ -22,4 +22,43 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('welcome_message');
 	}
+
+
+
+	public function signup()
+	{
+		$this->form_validation->set_rules('username','Username','required');
+		$this->form_validation->set_rules('email','Email','required');
+		$this->form_validation->set_rules('password','Password','required');
+		$this->form_validation->set_rules('mobile','Mobile','required');
+		if($this->form_validation-> run()){
+			echo 'Success Validation passed';
+			$this->load->model('queries');
+			$data = $this ->input->post();
+			unset($data['submit']);
+
+			if($this->queries->register($data)){
+				$this->session->set_flashdata ('response', 'Registered Succesfully');
+
+			}
+			else{
+				$this->session->set_flashdata ('response', 'Registration failed');
+
+			}
+
+
+			return redirect ('welcome');
+
+
+		}
+		else{
+			return $this->index();
+
+		}
+	}
+
+
+
+
+
 }
