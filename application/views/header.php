@@ -10,22 +10,15 @@
 
 
 <style type ="text/css">
- 
- .greeting{
-
-
- }
-
-
-.response{
-
-
-}
-
 
 </style>
 
+<h2>Blogging Application - Welcome !</h2>
+<p>In this example, we use CSS to style the list horizontally, to create a navigation menu:</p>
 
-<div class = "container">
-	<div class="" data-responsive-toggle
+<ul>
+  <li><?php echo anchor("welcome/logout",'Secure Logout'); ?></li>
+</ul>
+
+
 

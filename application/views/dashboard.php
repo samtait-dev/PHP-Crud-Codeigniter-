@@ -5,17 +5,17 @@
 
 <div class="row"> 
 <div class="small-12 medium-6 large-3 columns">
-	<u class="side-nav">
-	<?php $username = $this->session->userdata('username');    ?>
-	<li><h3> Welcome <?php echo $username; ?> </h3></li>
-	<hr>
-	<li><?php echo anchor("dashboard/addPost, 'Add Blog Post'"); ?></li>
-	</u>
+
+	<?php $username = $this->session->userdata('username');    ?>	
+	<h3> Welcome <?php echo $username; ?> </h3>
+
+	<li><?php echo anchor("dashboard/addPost", 'Add Blog Post'); ?></li>
+
 
 </div>
 
-
-
+<h2>Read our blogs</h2>
+ </div>
 </div>
 
 
